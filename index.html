@@ -63,7 +63,35 @@
     </form>
   </div>
 
+<script src= "https://www.gstatic.com/firebasejs/6.0.1/firebase-app.js">
+
+</script>
+
+<script src= "https://www.gstatic.com/firebasejs/6.0.1/firebase-firestore.js">
+
+</script>
+
+
+<script>
+  // Import the functions you need from the SDKs you nee
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyB8ieRgcdBHqGPOv6EAD6Oc9SeL9jTfiFQ",
+    authDomain: "ubereatscudecrazo.firebaseapp.com",
+    projectId: "ubereatscudecrazo",
+    storageBucket: "ubereatscudecrazo.firebasestorage.app",
+    messagingSenderId: "631379683714",
+    appId: "1:631379683714:web:2809e78de24f74d58d479b"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+</script>
   <script src="/js/index.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-app-compat.js"></script>
+  <script src="/js/db.js"></script>
 </body>
 </html>
