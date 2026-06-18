@@ -14,7 +14,7 @@ alert('Platillo agregado');
 });
 
 function mostrarPlatillo(platillo, id) {
-    contenido += `<div class="card-panel recipe white row" data-id=${id}">
+    contenido += `<div class="card-panel recipe white row" id="${id}">
     <div class="recipe-details">
       <div class="recipe-title">
           nombre: ${platillo.nombre}
@@ -27,10 +27,18 @@ function mostrarPlatillo(platillo, id) {
       </div>
         </div>
         <div class="recipe-delete">
-        <i class="material-icons" data-id="{id}">delete_outline </i>
+        <i class="material-icons" data-id="${id}">delete_outline</i>
         </div>
         </div>`;
         
 
     document.querySelector('.recipes').innerHTML = contenido;
+}
+
+function actualizarPlatillo(platillo, id) {
+  let tarjeta = document.getElementById(`${id}`);
+  tarjeta.querySelector(".recipe-title").innerHTML = platillo.nombre;
+  tarjeta.querySelector(".recipe-ingredients").innerHTML = platillo.ingredientes;
+  tarjeta.querySelector(".recipe-price").innerHTML = `Precio: $${platillo.precio}`;
+
 }
