@@ -8,4 +8,6 @@
   };
 
   firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
+  window.db = firebase.firestore();
+  console.log("firebase.js cargado");
+console.log(db);

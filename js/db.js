@@ -6,7 +6,6 @@ db.collection("platillos").onSnapshot((datos) => {
     
     actualizarPlatillo(registro.doc.data(), registro.doc.id);
     }
-
         if (registro.type === "modified") {
     actualizarPlatillo(registro.doc.data(), registro.doc.id);
     }
