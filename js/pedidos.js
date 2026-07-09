@@ -28,10 +28,33 @@ function agregarALista(platillo, id) {
     lista.innerHTML = contenidoLista;
 }
 
-M.AutoInit();
+
+function exito(posicion){
+    let latitud = posicion.coords.latitud;
+    let longitud = posicion.coords.longitude;
+    fetch(`https://nominatim.openstreetmap.org/revers?lat=${latitud}&lon=${longitud}&format=json,` {
+        headers: {
+        'User-Agent': 'UberEatsCUDECRAZO (hormiguita.7528@gmail.com)'
+        }
+    })
+
+
+    .then (respuesta => respuesta. json())
+    .then(data => {
+    let ciudad = data.address.city;
+    let pais = data.address. country;
+    document.getElementById("ubicacion") . value = `${ciudad}, ${pais}`
+}
+)}
 
 
 const btnGuardar = document.getElementById("btnGuardarPlatillo");
+document.getElementById("btnUbicacion").addEventListener("click",function(){
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(exito, error);
+    }
+});
+
 
 if (btnGuardar) {
     btnGuardar.addEventListener("click", function (e) {

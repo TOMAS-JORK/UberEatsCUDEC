@@ -73,3 +73,17 @@ input{
 form .input-field{
   margin-top: 30px;
 }
+
+.btn-smalll {
+    
+    padding: 8px 16px;
+    background-color: #0c8eff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-small:hover {
+    background-color: #0b93fc;
+}
