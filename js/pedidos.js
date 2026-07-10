@@ -28,24 +28,38 @@ function agregarALista(platillo, id) {
     lista.innerHTML = contenidoLista;
 }
 
-
-function exito(posicion){
-    let latitud = posicion.coords.latitud;
+function exito(posicion) {
+    let latitud = posicion.coords.latitude;
     let longitud = posicion.coords.longitude;
-    fetch(`https://nominatim.openstreetmap.org/revers?lat=${latitud}&lon=${longitud}&format=json,` {
+
+    fetch(`https://nominatim.openstreetmap.org/reverse?lat=${latitud}&lon=${longitud}&format=json`, {
         headers: {
-        'User-Agent': 'UberEatsCUDECRAZO (hormiguita.7528@gmail.com)'
+            'User-Agent': 'UberEatsCUDECRAZO (hormiguita.7528@gmail.com)'
         }
     })
-
-
-    .then (respuesta => respuesta. json())
+    .then(respuesta => respuesta.json())
     .then(data => {
-    let ciudad = data.address.city;
-    let pais = data.address. country;
-    document.getElementById("ubicacion") . value = `${ciudad}, ${pais}`
+        let ciudad = data.address.city;
+        let pais = data.address.country;
+        document.getElementById("ubicacion").innerHTML = `${ciudad}, ${pais}`;
+       var map = L.map('mapa').setView([latitud, longitud], 13);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19, 
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        var marker = L.marker([latitud, longitud]).addTo(map);
+    })
+    .catch(error => {
+    console.error(error);
+});
 }
-)}
+    function error (error)  {
+        alert("error al obtener ubicacion");
+        console.log( error);
+    }
+
+
+
 
 
 const btnGuardar = document.getElementById("btnGuardarPlatillo");
