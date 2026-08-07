@@ -67,6 +67,21 @@
       </div>
     </form>
 
+
+    <!-- codigo de foto  -->
+    <button id="btnFoto">Tomar foto</button>
+        <div id="camara">
+          <video id="video" autoplay></video>
+        </div>
+
+    <canvas id="canvas"></canvas>
+
+        <div id="salida">
+            <img id="foto" src="" alt="foto del platillo">
+        </div>
+
+    
+
     <!-- boton de foto  -->
     <button id="btnFoto">imagen</button>
       <div id="camara">
@@ -88,5 +103,11 @@
   <script src="/js/firebase.js"></script>
   <script src="/js/index.js"></script>
   <script src="/js/db.js"></script>
+
+<script>
+  if (typeof navigator.serviceWorker !== 'undefined') {
+    navigator.serviceWorker.register('sw.js')
+  }
+  </script>
 </body>
 </html>

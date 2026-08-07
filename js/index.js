@@ -61,3 +61,56 @@ document.addEventListener("click", function(e){
         }
     }
 });
+
+let streaming = false;
+const width = 320;
+let height = 0;
+
+const video = document.getElementById("video");
+const canvas = document.getElementById("canvas");
+const foto = document.getElementById("foto");
+const btnfoto = document.getElementById("btnFoto"); // F mayúscula
+
+btnfoto.addEventListener("click", function () {
+  if (!streaming) {
+    navigator.mediaDevices.getUserMedia({
+      video: true,
+      audio: false,
+    })
+    .then((stream) => {
+      video.srcObject = stream;
+      video.play();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+    video.addEventListener("canplay", function () {
+      if (!streaming) {
+        height = video.videoHeight / (video.videoWidth / width);
+
+        video.setAttribute("width", width);
+        video.setAttribute("height", height);
+
+        streaming = true;
+      }
+    }, { once: true });
+
+  } else {
+    tomarFoto();
+  }
+});
+
+function tomarFoto() {
+  const contexto = canvas.getContext("2d");
+
+  if (width && height) {
+    canvas.width = width;
+    canvas.height = height;
+
+    contexto.drawImage(video, 0, 0, width, height);
+
+    const fotoFinal = canvas.toDataURL("image/png");
+    foto.setAttribute("src", fotoFinal);
+  }
+}
