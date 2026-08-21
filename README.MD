@@ -66,31 +66,53 @@ Web APIs
 
 ![alt text](image.png)
 
+![](assets/20260820_201500_image.png)
+
+
 7. Evidencias / capturas de pantalla
 
 Inicio:
 
+![](assets/20260820_204043_image.png)
 
 Registrar platillo
 
+![](assets/20260820_204159_image.png)
+
+
 Realizar pedido (al terminar de hacer el pedido)
+
+![](assets/20260820_204534_image.png)
 
 Acerca
 
+![](assets/20260820_204644_image.png)
+
+
 Contacto
+
+![](assets/20260820_210201_image.png)
+
 
 8. Base de datos
 
-Incluir, de manera resumida:
+Firebase sdk
 
-Motor utilizado.
+pedidos: se almacena
 
-Tablas o colecciones.
+* nombre del cliente
+* el producto que selecciono
+* la ubicacion de destino
+
+platillos:
+
+* ingredientes
+* nombre
+* precio
 
 9. Licencia
 
-Si el proyecto es exclusivamente académico, pueden indicar una licencia (buscar e indicar licencia de proyectos académicos):
+Todos los derechos reservados
+RappiLeo es un proyecto desarrollado exclusivamente con fines académicos. Los derechos sobre el código fuente, diseño, estructura y contenido desarrollado por los autores quedan reservados. Cualquier reproducción, modificación, distribución o uso del proyecto deberá contar con la autorización de sus autores.
 
-Licencia
-
-Este proyecto fue desarrollado con fines académicos como parte de la carrera [Nombre de la carrera], para la materia [Nombre de la materia], del [Grupo] en [Nombre de la institución].
+Este proyecto fue desarrollado con fines académicos como parte de la carrera [INGENIERIA EN SISTEMAS COMPUTACIONALES], para la materia [Taller de Programacion Avanzada II], del [09-ISC-181] en [CUDEC].
