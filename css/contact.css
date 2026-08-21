@@ -1,0 +1,167 @@
+:root {
+  --primary: #FFE9D2;
+  --secondary: #FFE1C4;
+  --title: #FF8816;
+  --text: #555;
+  --background: #f5f5f5;
+  --white: #fff;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+}
+
+/* NAVBAR */
+
+nav {
+  background: var(--primary);
+  border-bottom: 10px solid var(--secondary);
+}
+
+nav a {
+  color: var(--title);
+  font-weight: 600;
+}
+
+nav .sidenav-trigger {
+  color: var(--title);
+  margin: 0;
+}
+
+/* MENU */
+
+.side-menu a {
+  color: var(--text);
+}
+
+.side-menu .subheader {
+  color: var(--title);
+  font-weight: bold;
+}
+
+.side-menu a:hover {
+  background: var(--primary);
+  color: var(--title);
+}
+
+/* CONTENEDOR */
+
+.contact-container {
+  max-width: 850px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* ENCABEZADO */
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-icon {
+  font-size: 55px;
+  color: var(--title);
+}
+
+.contact-header h4 {
+  color: var(--title);
+  font-weight: 600;
+  margin: 10px 0 5px;
+}
+
+.contact-header p {
+  margin: 0;
+  color: #777;
+}
+
+/* TARJETAS */
+
+.contact-card {
+  background: var(--white);
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(90,90,90,.12);
+}
+
+.contact-card h5 {
+  color: var(--title);
+  font-size: 21px;
+  font-weight: 600;
+  margin: 0 0 15px;
+}
+
+.contact-card p {
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0 0 20px;
+}
+
+/* INFORMACION */
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: var(--primary);
+  border-left: 4px solid var(--title);
+  border-radius: 6px;
+}
+
+.contact-info .material-icons {
+  color: var(--title);
+  font-size: 30px;
+}
+
+.contact-info div span {
+  display: block;
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 3px;
+}
+
+.contact-info a,
+.contact-info strong {
+  color: var(--title);
+  font-size: 16px;
+}
+
+/* FOOTER */
+
+.contact-footer {
+  text-align: center;
+  padding: 15px 0 25px;
+  color: #888;
+}
+
+.contact-footer p {
+  color: var(--title);
+  font-weight: 600;
+  margin: 0 0 5px;
+}
+
+/* MOVIL */
+
+@media (max-width: 600px) {
+
+  .contact-container {
+    padding: 30px 15px;
+  }
+
+  .contact-card {
+    padding: 20px;
+  }
+
+  .contact-card h5 {
+    font-size: 19px;
+  }
+
+  .contact-card p {
+    font-size: 14px;
+  }
+
+}
